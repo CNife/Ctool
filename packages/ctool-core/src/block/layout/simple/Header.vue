@@ -5,10 +5,7 @@
             <span>{{ $t(`tool_${storeOperate.items.tool}`) }}</span>
         </Align>
         <div class="ctool-header-middle" :class="features.length > 1 ? `ctool-header-middle-center` : ''">
-            <template v-if="features.length < 1">
-                <Notice center/>
-            </template>
-            <template v-else>
+            <template v-if="features.length > 0">
                 <div
                     v-for="feature in features"
                     class="ctool-header-feature-item"
@@ -52,7 +49,6 @@ import {onMounted, onUnmounted} from "vue";
 import event from "@/event";
 import History from "../../History.vue"
 import platform from "@/helper/platform"
-import Notice from "../../Notice.vue"
 import Tools from "../../Tools.vue";
 
 const storeOperate = useOperate()

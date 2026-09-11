@@ -9,13 +9,6 @@
                     <span class="ctool-site-name">Ctool</span>
                 </a>
                 <div class="ctool-option">
-                    <a href="https://github.com/baiy/ctool" rel="external nofollow noreferrer" target="_blank">
-                        <img
-                            alt="GitHub Repo stars"
-                            style="height: 26px; opacity: 0.8"
-                            src="https://img.shields.io/github/stars/baiy/ctool?style=social"
-                        />
-                    </a>
                     <a class="ctool-theme ctool-hover-opacity" @click="setting.update('theme')">
                         <Theme />
                     </a>
@@ -176,9 +169,6 @@
             <a href="https://github.com/baiy/Ctool" class="ctool-contribution-button ctool-hover-opacity">
                 <Github />
                 <span>Ctool Github</span>
-            </a>
-            <a href="https://github.com/baiy/ctool/graphs/contributors" style="text-align: center" target="_blank">
-                <img src="https://contrib.rocks/image?repo=baiy/ctool" style="max-width: 90%" />
             </a>
         </section>
         <p>© {{ new Date().getFullYear() }} Ctool.DEV, All rights reserved.</p>

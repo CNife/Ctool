@@ -1,8 +1,6 @@
 <template>
     <div class="ctool-bottom">
-        <div class="ctool-bottom-left">
-            <Notice />
-        </div>
+        <div class="ctool-bottom-left"></div>
         <Align class="ctool-bottom-right" :gap="'large'">
             <Icon hover :size="18" name="clear" @click="event.dispatch('content_clear')" :tooltip="$t('main_content_clear')"/>
             <span style="display: inline-flex;" :class="!storeSetting.items.history_icon_badge_hidden && historyExist ? `ctool-bottom-exist-history` : ''">
@@ -30,7 +28,6 @@ import useOperate from "@/store/operate";
 import useSetting from "@/store/setting";
 import History from "../../History.vue"
 import platform from "@/helper/platform"
-import Notice from "../../Notice.vue"
 import {openUrl} from "@/helper/helper"
 import getHistoryInstance from "@/helper/history";
 import {onMounted, onUnmounted} from "vue";

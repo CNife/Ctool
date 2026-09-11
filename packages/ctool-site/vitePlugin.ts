@@ -78,9 +78,7 @@ export default (): Plugin => {
             // 处理核心文件
             const dist = join(config.root, config.build.outDir);
 
-            const head = readFileSync(join(__dirname, 'head.html'))
-                .toString()
-                .replaceAll('<GOOGLE_ANALYTICS_ID>', process.env.GOOGLE_ANALYTICS_ID || "ctool");
+            const head = readFileSync(join(__dirname, 'head.html')).toString();
 
             ['index.html', 'tool.html'].map(file => join(dist, file)).forEach(file => {
                 writeFileSync(file, readFileSync(file).toString().replace('</head>', head))

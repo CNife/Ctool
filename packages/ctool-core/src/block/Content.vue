@@ -20,7 +20,6 @@
 <script setup lang="ts">
 import {useRouter} from 'vue-router'
 import {onMounted} from 'vue'
-import {report} from '@/helper/stat'
 import {RouteMeta} from '@/types'
 import {categoryExists, getTool} from '@/config'
 import useOperate from '@/store/operate'
@@ -59,9 +58,6 @@ router.beforeResolve((to) => {
             is = true
             return false
         }
-        report({_t: meta.type, _c: category, _n: meta.tool, _f: meta.feature, _p: to.name || ""})
-    } else {
-        report({_t: meta.type, _p: to.name || ""})
     }
 })
 
