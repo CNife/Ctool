@@ -30,9 +30,15 @@
 | `ctool` A | `118.31.8.153` |
 | `ctool` AAAA（可选）| `2408:4005:31a:e300::1` |
 
+已添加（2026-09-11，阿里云 DNS）：
+`A` RecordId `2098263054416057344`，`AAAA` RecordId `2098263057905788928`。
+
 ## 首次部署
 
 ```bash
+# 0) 服务器：安装 rsync（Debian 默认未装）
+ssh cnife.ali-hz-1 'sudo apt-get install -y rsync'
+
 # 1) 服务器：站点目录（ecs-user 拥有，Caddy 只读）
 ssh cnife.ali-hz-1 'sudo mkdir -p /srv/ctool && sudo chown ecs-user:ecs-user /srv/ctool'
 
