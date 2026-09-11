@@ -1,0 +1,15 @@
+# 追加到服务器 /etc/caddy/Caddyfile
+ctool.cnife.cn {
+	encode gzip zstd
+	root * /srv/ctool
+
+	# 与上游 vercel.json 一致：隐私政策跳转
+	redir /privacy https://github.com/baiy/Ctool/blob/master/PRIVACY
+
+	# 带内容哈希的静态资源长缓存；sw.js 必须每次校验，否则 SW 更新延迟
+	@hashed path /assets/* /_assets/* /icon/*
+	header @hashed Cache-Control "public, max-age=31536000, immutable"
+	header /sw.js Cache-Control "no-cache"
+
+	file_server
+}
